@@ -1,0 +1,57 @@
+/*============================================ 
+# Template Name: DentiX
+# Version: 1.0
+# Date: 
+# Author: 
+# Description: DentiX - Landing Page HTML Template
+============================================*/
+
+/*============================================ 
+======== Table of Css Content =========
+# Typography
+# Normalize 
+# Global style
+# Header Area
+# Banner Area
+# Section Area
+# Footer Area
+============================================*/
+
+// Scss main
+
+//--Main Variable--//
+@import "main/_variable";
+//--Main mixins--//
+@import "main/_mixins";
+//--Main typography--//
+@import "main/_typography";
+//--Main global--//
+@import "main/_global";
+
+// Scss Pages
+
+//--Pages Navbar--//
+@import "pages/_header";
+//--Pages Footer--//
+@import "pages/_footer";
+//--Pages Section--//
+@import "pages/_section";
+
+// Scss Components
+@import "components/_blog";
+//--Components Breadcrumnd Section--//
+@import "components/_breadcrumnd";
+//--Components Consultation Section--//
+@import "components/_consultation";
+//--Components Contact Section--//
+@import "components/_contact";
+//--Components Faq Section--//
+@import "components/_faq";
+//--Components Pricing Section--//
+@import "components/_pricing";
+//--Components Service Section--//
+@import "components/_service";
+//--Components Team Section--//
+@import "components/_team";
+//--Components Testimonial Section--//
+@import "components/_testimonial";

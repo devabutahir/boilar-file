@@ -1,0 +1,203 @@
+
+.header-section {
+    width: 100%;
+    z-index: 100;
+    .nav-brand {
+        max-width: 265px;
+        @include maxQuery(991) {
+            max-width: 150px;
+        }
+    }
+    .search-toggle-box {
+        @include maxQuery(767) {
+            display: none;
+            position: absolute;
+            width: 100%;
+            top: 60px;
+            z-index: 10;
+        }
+    }
+    // Navbar Start
+    .main-navbar {
+        @include maxQuery(991) {
+            .navbar-toggle-item {
+                display: none;
+            }
+        }
+        @include minQuery(992) {
+            .navbar-toggle-item {
+                display: initial !important;
+            }
+        }
+        .custom-nav {
+            .menu-item {
+                button {
+                    &::after {
+                        position: absolute;
+                        content: "\f078";
+                        font-family: "FontAwesome";
+                        font-weight: 500;
+                        font-size: 14px;
+                        right: 0px;
+                        z-index: -1;
+                        transition: all 1s ease;
+                    }
+                }
+                .home-scroolls{
+                    height: 30vh;
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+                }
+            }
+            .menu-item,
+            .menu-link {
+                button, a {
+                    font-size: 16px !important;
+                    @include maxQuery(991){
+                        font-size: 14px !important;
+                        font-weight: 400 !important;
+                    }
+                    @include maxQuery(575) {
+                        font-size: 16px;
+                    }
+                    &:hover, &.active{
+                        color: var(--p1);
+                    }
+                }
+            }
+            @include maxQuery(991) {
+                width: 100%;
+                .sub-menu {
+                    display: none;
+                    padding: 10px 14px 14px;
+                    border-left: 2px solid var(--p1);
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                    background: var(--bg2) !important;
+                    li{
+                        a{
+                            font-size: 14px !important;
+                            font-weight: 400 !important;
+                            letter-spacing: 2px;
+                        }
+                    }
+                }
+            }
+            @include minQuery(992) {
+                .menu-item {
+                    padding: 34px 0;
+                    button {
+                        &:hover {
+                            button {
+                                &::after {
+                                    transform: rotate(-180deg);
+                                }
+                            }
+                        }
+                    }
+                }
+                .sub-menu {
+                    position: absolute;
+                    top: 20px;
+                    left: -30px;
+                    min-width: 240px;
+                    opacity: 0;
+                    width: max-content;
+                    visibility: hidden;
+                    transform: translateY(50px);
+                    text-wrap: nowrap;
+                    transition: var(--transition);
+                    display: initial !important;
+                    background: var(--bg1);
+                    z-index: 10;
+                    pointer-events: none;
+                    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                    .sub-menu{
+                        border-left: 2px solid var(--p1);
+                        left:  99%;
+                        top: -55px;
+                        z-index: 9;
+                    }
+                }
+                .menu-item {
+                    position: relative;
+                    &:hover {
+                        >.sub-menu {
+                            opacity: 1;
+                            visibility: visible;
+                            transform: translateY(60px);
+                            pointer-events: auto;
+                        }
+                    }
+                }
+            }
+        }
+        .navbar-toggle-btn {
+            width: 36px;
+            height: 24px;
+            position: relative;
+            right: 0;
+            transition: var(--transition);
+            top: 0;
+            span {
+                display: block;
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                background: var(--p1);
+                border-radius: 9px;
+                opacity: 1;
+                left: 0;
+                transform: rotate(0deg);
+                transition: var(--transition);
+                &:nth-child(1) {
+                    top: 0;
+                }
+                &:nth-child(2),
+                &:nth-child(3) {
+                    top: 12px;
+                }
+                &:nth-child(4) {
+                    top: 24px;
+                }
+            }
+            &.open {
+                span {
+                    &:nth-child(1) {
+                        top: 18px;
+                        width: 0%;
+                        left: 50%;
+                    }
+
+                    &:nth-child(2) {
+                        transform: rotate(45deg);
+                    }
+
+                    &:nth-child(3) {
+                        transform: rotate(-45deg);
+                    }
+
+                    &:nth-child(4) {
+                        top: 18px;
+                        width: 0%;
+                        left: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cus__scroll{
+    max-height: 65vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+// sticky header 
+.header-fixed{
+    position: fixed;
+    top: 0px;
+    z-index: 999;
+    width: 100%;
+    background: var(--bg1);
+}
